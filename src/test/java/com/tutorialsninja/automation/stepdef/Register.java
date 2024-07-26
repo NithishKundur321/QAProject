@@ -1,6 +1,8 @@
 package com.tutorialsninja.automation.stepdef;
 
 import com.tutorialsninja.automation.base.Base;
+import com.tutorialsninja.automation.framework.Elements;
+import com.tutorialsninja.automation.pages.HeadersSection;
 
 import cucumber.api.DataTable;
 import cucumber.api.java.en.*;
@@ -15,7 +17,10 @@ public class Register
 	}
 
 	@And("^I navigate to Account Registration page$")
-	public void i_navigate_to_Account_Registration_page() {
+	public void i_navigate_to_Account_Registration_page() 
+	{
+		Elements.click(HeadersSection.myaccountlink);
+		Elements.click(HeadersSection.register);
 	  
 	}
 
