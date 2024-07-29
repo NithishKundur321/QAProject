@@ -39,7 +39,7 @@ public class Register
 	@When("^I provide all the below valid details$")
 	public void i_provide_all_the_below_valid_details(DataTable dataTable)
 	{
-		RegisterPage.enterAllDetails(dataTable);
+		RegisterPage.enterAllDetails(dataTable,"unique");
 		
 	}
 
@@ -69,12 +69,38 @@ public class Register
 	    
 	}
 
-	@Then("^I should see the error messages informing the User to fill the mandatory fields$")
+	@And("^I should see the error messages informing the User to fill the mandatory fields$")
 	public void i_should_see_the_error_messages_informing_the_User_to_fill_the_mandatory_fields()  
 	{
-		
+		Assert.assertTrue(Elements.isDisplayed(RegisterPage.firstnamewarning));
+		Assert.assertTrue(Elements.isDisplayed(RegisterPage.lastnamewarning));
+		Assert.assertTrue(Elements.isDisplayed(RegisterPage.emailwarning));
+		Assert.assertTrue(Elements.isDisplayed(RegisterPage.telephonewarning));
+		Assert.assertTrue(Elements.isDisplayed(RegisterPage.passwordwarning));
+		Assert.assertTrue(Elements.isDisplayed(RegisterPage.mainwarning));
 	    
 	}
+	
+	@And("^I subscribe to Newsletter$")
+	public void i_subscribe_to_Newsletter()
+	{
+		Elements.click(RegisterPage.yestoNewsLetter);
+	    
+	}
+	@When("^I provide all the below duplicate details$")
+	public void i_provide_all_the_below_duplicate_details(DataTable dataTable)
+	{
+	 RegisterPage.enterAllDetails(dataTable, "duplicate");
+		
+	}
+
+	@Then("^I should see user is restricted from creating duplicate account$")
+	public void i_should_see_user_is_restricted_from_creating_duplicate_account()
+	{
+		Assert.assertTrue(Elements.VerifyTextEquals(RegisterPage.mainwarning, "Warning: You must agree to the Privacy Policy!"));
+	    
+	}
+
 
 
 	

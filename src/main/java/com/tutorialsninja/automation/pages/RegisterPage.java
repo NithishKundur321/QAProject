@@ -47,15 +47,41 @@ public class RegisterPage
 	@FindBy(css="input[id='input-firstname']+div")
 	public static WebElement firstnamewarning;
 	
-	public static void enterAllDetails(DataTable dataTable)
+	@FindBy(css="input[id='input-lastname']+div")
+	public static WebElement lastnamewarning;
+	
+	@FindBy(css="input[id='input-email']+div")
+	public static WebElement emailwarning;
+	
+	@FindBy(css="input[id='input-telephone']+div")
+	public static WebElement telephonewarning;
+	
+	@FindBy(css="input[id='input-password']+div")
+	public static WebElement passwordwarning;
+	
+	@FindBy(css="div[class$='alert-dismissible']")
+	public static WebElement mainwarning;
+	
+	@FindBy(css="input[name='newsletter'][value='1']")
+	public static WebElement yestoNewsLetter;
+	
+	public static void enterAllDetails(DataTable dataTable,String detailsType)
 	{
 		Map<String,String> map =dataTable.asMap(String.class, String.class);
 		Elements.TypeText(RegisterPage.firstName, map.get("FirstName"));
 		Elements.TypeText(RegisterPage.lastname, map.get("LastName"));
-		Elements.TypeText(RegisterPage.email, map.get("Email"));
+		
 		Elements.TypeText(RegisterPage.telephone, map.get("Telephone"));
 		Elements.TypeText(RegisterPage.password, map.get("Password"));
 		Elements.TypeText(RegisterPage.confirmPassword, map.get("ConfirmPassword"));
+		
+		if(detailsType.equalsIgnoreCase("duplicate"))
+		Elements.TypeText(RegisterPage.email, map.get("Email"));
+		else
+			Elements.TypeText(RegisterPage.email, map.get("Email"));
+			
+			
+		
 	}
 	
 
