@@ -41,6 +41,12 @@ public class RegisterPage
 	@FindBy(id="input[type='submit'][value='Continue']")
 	public static WebElement continueButton;
 	
+	@FindBy(linkText="Register")
+	public static WebElement registerBreadCrumb;
+	
+	@FindBy(css="input[id='input-firstname']+div")
+	public static WebElement firstnamewarning;
+	
 	public static void enterAllDetails(DataTable dataTable)
 	{
 		Map<String,String> map =dataTable.asMap(String.class, String.class);

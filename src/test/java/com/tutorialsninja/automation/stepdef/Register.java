@@ -41,9 +41,6 @@ public class Register
 	{
 		RegisterPage.enterAllDetails(dataTable);
 		
-		
-		
-	   
 	}
 
 	@And("^I select the Privacy Policy$")
@@ -64,9 +61,21 @@ public class Register
 	{
 		Assert.assertTrue(Elements.isDisplayed(AccountSuccessPage.successBreadcrumb));
 		
-		
-	   
 	}
+	@Then("^I should see that the User Account is not created$")
+	public void i_should_see_that_the_User_Account_is_not_created() 
+	{
+		Assert.assertTrue(Elements.isDisplayed(RegisterPage.registerBreadCrumb));
+	    
+	}
+
+	@Then("^I should see the error messages informing the User to fill the mandatory fields$")
+	public void i_should_see_the_error_messages_informing_the_User_to_fill_the_mandatory_fields()  
+	{
+		
+	    
+	}
+
 
 	
 	
