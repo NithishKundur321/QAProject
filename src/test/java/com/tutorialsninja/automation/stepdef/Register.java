@@ -2,6 +2,8 @@ package com.tutorialsninja.automation.stepdef;
 
 import java.util.Map;
 
+
+
 import org.junit.Assert;
 
 import com.tutorialsninja.automation.base.Base;
@@ -12,9 +14,6 @@ import com.tutorialsninja.automation.pages.RegisterPage;
 
 import cucumber.api.DataTable;
 import cucumber.api.java.en.*;
-
-
-
 
 public class Register 
 {

@@ -78,7 +78,7 @@ public class RegisterPage
 		if(detailsType.equalsIgnoreCase("duplicate"))
 		Elements.TypeText(RegisterPage.email, map.get("Email"));
 		else
-			Elements.TypeText(RegisterPage.email, map.get("Email"));
+		Elements.TypeText(RegisterPage.email, map.get("Email"));
 			
 			
 		
