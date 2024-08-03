@@ -2,6 +2,7 @@ package com.tutorialsninja.automation.base;
 
 import org.openqa.selenium.WebDriver;
 
+
 import com.tutorialsninja.automation.config.ConfigurationReader;
 import com.tutorialsninja.automation.config.PropertyFileReader;
 import com.tutorialsninja.automation.framework.Browser;
