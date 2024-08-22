@@ -15,6 +15,8 @@ public class Login
 {
 	HeadersSection headersection = new HeadersSection();
 	LoginPage loginpage = new LoginPage();
+	MyAccountPage account = new MyAccountPage();
+	ForgotPasswordPage forgotpassword = new ForgotPasswordPage();
 	@And("^I navigate to account Login Page$")
 	public void i_navigate_to_account_Login_Page()
 	{

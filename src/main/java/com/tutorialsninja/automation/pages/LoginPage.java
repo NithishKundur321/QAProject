@@ -1,6 +1,7 @@
 package com.tutorialsninja.automation.pages;
 
 import org.openqa.selenium.WebElement;
+
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -37,6 +38,12 @@ public class LoginPage
 		
 	}
 	
+	public static void dologin()
+	{
+		Elements.TypeText(LoginPage.emailfeild, Base.reader.getUsername());
+		Elements.TypeText(LoginPage.emailfeild, Base.reader.getPassword());
+		Elements.click(LoginPage.LoginButton);
+	}
 	
 	
 	
